@@ -22,3 +22,13 @@
 ###
 ## Overall Description
 #### The overall purpose of the project is to write python files that interpret text files containing data, and then return data and plot graphs based on the returned data.
+
+### To-Do:
+- [x] Create Project outline
+- [x] Write wordData.py
+- [x] Write letterFreq.py
+- [ ] Write printedWords.py
+- [ ] Write trending.py
+- [ ] Write wordSimilarity.py
+- [ ] All tests work
+- [ ] All inputs are backed up with fail-safes
