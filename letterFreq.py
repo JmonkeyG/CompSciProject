@@ -9,8 +9,9 @@ letters = 'abcdefghijklmnopqrstuvwxyz'
 def makeLetterDict() -> dict:
     """
     The func makes a dictionary of all the letters of the alphabet and their frequency
+    and then returns the dictionary of each letter with a value of 0
 
-    :return: dictionary of each letter with value 0
+    :return:
     """
     result = dict()
     for char in letters:
