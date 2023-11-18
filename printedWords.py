@@ -1,17 +1,21 @@
-import os
-import matplotlib as plt
+import os.path
+import matplotlib.pyplot as plt
 import wordData
 
 
 def printedWords(words: dict) -> list:
     """
-    The func takes a dictionary of words and how much they appeared each year
-    then returns a list of tuple pairs containing (year, yearWordCount)
+    This function takes a dictionary of words and how many times they appeared each year
+    and returns a list of tuple pairs containing (year, yearWordCount).
 
     :param words:
     :return:
     """
-    pass
+    word_count_by_year = {}
+    for word, year_info in words.items():
+        for year, count in year_info.items():
+            word_count_by_year[year] = word_count_by_year.get(year, 0) + count
+    return list(word_count_by_year.items())
 
 
 def wordsForYear(year: int, year_lst: list) -> int:
@@ -22,30 +26,28 @@ def wordsForYear(year: int, year_lst: list) -> int:
     :param year_lst:
     :return:
     """
-    for yr in year_lst:
-        if yr[0] == year:
-            return yr[1]
-    raise Exception('Error: year is not contained in year_lst')
+    year_dict = {year: count for (year, count) in year_lst}
+    if year in year_dict:
+        return year_dict[year]
+    raise IndexError('Error: year is not contained in year_lst')
 
 
 def main():
     file_name = input('Enter a file name\n-> ')
     if not os.path.isfile(os.path.join('data', file_name)):
-        raise Exception('Error: File does not exist')
+        raise FileNotFoundError('Error: File does not exist')
     search_year = input(f'Enter a year to search in {file_name}\n-> ')
-    for char in search_year:
-        if not char.isdigit():
-            raise Exception('Error: search year is not an integer')
+    if not search_year.isdigit():
+        raise ValueError('Error: search year is not an integer')
     try:
         search_year = int(search_year)
         word_dictionary = wordData.readWordFile(file_name)
         year_lst = printedWords(word_dictionary)
         occurrences = wordsForYear(search_year, year_lst)
-        match occurrences:
-            case 1:
-                print(f'The word {search_year} shows up {occurrences} time')
-            case occurrences:
-                print(f'The word {search_year} shows up {occurrences} times')
+        print(f'The year {search_year} contains {occurrences} word{"s" if occurrences != 1 else ""}')
+        list_of_years, list_of_counts = zip(*year_lst)
+        plt.plot(list_of_years, list_of_counts)
+        plt.show()
     except Exception as e:
         print(str(e))
 
