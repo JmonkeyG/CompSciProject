@@ -2,6 +2,13 @@ import os.path
 
 
 def readWordFile(file) -> dict or None:
+    """
+    The func takes in a file name and returns a dictionary in
+    the format {word: {year: word_count, ...}, ...}.
+
+    :param file:
+    :return:
+    """
     if not os.path.isfile(os.path.join('data', file)):
         raise FileNotFoundError('Error: File does not exist')
     wordDict = dict()
@@ -19,6 +26,14 @@ def readWordFile(file) -> dict or None:
 
 
 def totalOccurrences(word: str, dictionary: dict) -> int:
+    """
+    The func takes a word and a dictionary of words and returns the
+    number of times that word appears for all years.
+
+    :param word:
+    :param dictionary:
+    :return:
+    """
     if word not in dictionary.keys():
         return 0
     result = 0
