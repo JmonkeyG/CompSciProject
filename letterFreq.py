@@ -36,6 +36,14 @@ def checkLetterCount(word: str, words: dict, alphabet: dict) -> dict:
 
 
 def letterFreqDict(words: dict) -> dict:
+    """
+    The func calls other functions in order to make a list of letters
+    and their count of occurrences and then sorts the dictionary in
+    descending order based on the count and returns it.
+
+    :param words:
+    :return:
+    """
     alphabet = makeLetterDict()
     for word in words.keys():
         alphabet = checkLetterCount(word, words, alphabet)
