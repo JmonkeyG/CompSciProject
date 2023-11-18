@@ -20,7 +20,7 @@ def printedWords(words: dict) -> list:
 
 def wordsForYear(year: int, year_lst: list) -> int:
     """
-    The func takes a year and a list of years and their word count
+    The func takes a year and a list of years and their word count.
 
     :param year:
     :param year_lst:

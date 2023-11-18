@@ -9,7 +9,7 @@ letters = 'abcdefghijklmnopqrstuvwxyz'
 def makeLetterDict() -> dict:
     """
     The func makes a dictionary of all the letters of the alphabet and their frequency
-    and then returns the dictionary of each letter with a value of 0
+    and then returns the dictionary of each letter with a value of 0.
 
     :return:
     """
@@ -22,7 +22,7 @@ def makeLetterDict() -> dict:
 def checkLetterCount(word: str, words: dict, alphabet: dict) -> dict:
     """
     The func finds the occurrence of a word and adds that count for each
-    letter in the word to the alphabet dictionary
+    letter in the word to the alphabet dictionary.
 
     :param word:
     :param words:
@@ -47,7 +47,7 @@ def letterFreq(words: dict) -> str:
     """
     The func goes through each word in the file and runs the
     checkLetterCount() function and the orders the list of keys
-    based on their count in descending order
+    based on their count in descending order.
 
     :param words:
     :return:
