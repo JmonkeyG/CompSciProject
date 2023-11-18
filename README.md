@@ -30,8 +30,7 @@
 > ###### &emsp;&emsp;&emsp;&emsp; The func calls other functions in order to make a list of letters and their count of occurrences and 
 > ###### &emsp;&emsp;&emsp;&emsp; then sorts the dictionary in descending order based on the count and returns it.
 > ###### &emsp;&emsp; letterFreq(words)
-> ###### &emsp;&emsp;&emsp;&emsp; The func goes through each word in the file and runs the checkLetterCount() function and the 
-> ###### &emsp;&emsp;&emsp;&emsp; orders the list of keys based on their count in descending order.
+> ###### &emsp;&emsp;&emsp;&emsp; The func goes through each word in the file and runs the checkLetterCount() function and the orders the list of keys based on their count in descending order.
 > ###### &emsp;&emsp; main()
 > ###### &emsp;&emsp;&emsp;&emsp; When run on its own letterFreq will ask the user to input a file name. Then it returns a string 
 > ###### &emsp;&emsp;&emsp;&emsp; stating the order of letters with the most occurrences in descending order. Finally, the function 
