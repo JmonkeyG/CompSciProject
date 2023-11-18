@@ -1,4 +1,4 @@
-import os
+import os.path
 import matplotlib.pyplot as plt
 import wordData
 
@@ -62,7 +62,7 @@ def letterFreq(words: dict) -> str:
 def main():
     file_name = input('Enter a file name\n-> ')
     if not os.path.isfile(os.path.join('data', file_name)):
-        raise Exception('Error: File does not exist')
+        raise FileNotFoundError('Error: File does not exist')
     words_dict = wordData.readWordFile(file_name)
     letter_counts = letterFreqDict(words_dict)
     order = ''

@@ -3,7 +3,7 @@ import os.path
 
 def readWordFile(file) -> dict or None:
     if not os.path.isfile(os.path.join('data', file)):
-        raise Exception('Error: File does not exist')
+        raise FileNotFoundError('Error: File does not exist')
     wordDict = dict()
     with open(os.path.join('data', file)) as file:
         temp = str()
@@ -30,16 +30,12 @@ def totalOccurrences(word: str, dictionary: dict) -> int:
 def main():
     file_name = input('Enter a file name\n-> ')
     if not os.path.isfile(os.path.join('data', file_name)):
-        raise Exception('Error: File does not exist')
+        raise FileNotFoundError('Error: File does not exist')
     search_word = input(f'Enter a word to search in {file_name}\n-> ')
     try:
         word_dictionary = readWordFile(file_name)
         occurrences = totalOccurrences(search_word, word_dictionary)
-        match occurrences:
-            case 1:
-                print(f'The word {search_word} shows up {occurrences} time')
-            case occurrences:
-                print(f'The word {search_word} shows up {occurrences} times')
+        print(f'The word {search_word} shows up {occurrences} time{"s" if occurrences != 1 else ""}')
     except Exception as e:
         print(str(e))
 
