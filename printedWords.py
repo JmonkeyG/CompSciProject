@@ -36,13 +36,13 @@ def wordsForYear(year: int, year_lst: list) -> int:
 
 
 def main():
-    file_name = input('Enter a file name\n-> ')
-    if not os.path.isfile(os.path.join('data', file_name)):
-        raise FileNotFoundError('Error: File does not exist')
-    search_year = input(f'Enter a year to search in {file_name}\n-> ')
-    if not search_year.isdigit():
-        raise ValueError('Error: search year is not an integer')
     try:
+        file_name = input('Enter a file name\n-> ')
+        if not os.path.isfile(os.path.join('data', file_name)):
+            raise FileNotFoundError('Error: File does not exist')
+        search_year = input(f'Enter a year to search in {file_name}\n-> ')
+        if not search_year.isdigit():
+            raise ValueError('Error: search year is not an integer')
         search_year = int(search_year)
         word_dictionary = wordData.readWordFile(file_name)
         year_lst = printedWords(word_dictionary)

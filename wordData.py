@@ -43,11 +43,11 @@ def totalOccurrences(word: str, dictionary: dict) -> int:
 
 
 def main():
-    file_name = input('Enter a file name\n-> ')
-    if not os.path.isfile(os.path.join('data', file_name)):
-        raise FileNotFoundError('Error: File does not exist')
-    search_word = input(f'Enter a word to search in {file_name}\n-> ')
     try:
+        file_name = input('Enter a file name\n-> ')
+        if not os.path.isfile(os.path.join('data', file_name)):
+            raise FileNotFoundError('Error: File does not exist')
+        search_word = input(f'Enter a word to search in {file_name}\n-> ')
         word_dictionary = readWordFile(file_name)
         occurrences = totalOccurrences(search_word, word_dictionary)
         print(f'The word {search_word} shows up {occurrences} time{"s" if occurrences != 1 else ""}')

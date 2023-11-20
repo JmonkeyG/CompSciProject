@@ -69,21 +69,24 @@ def letterFreq(words: dict) -> str:
 
 
 def main():
-    file_name = input('Enter a file name\n-> ')
-    if not os.path.isfile(os.path.join('data', file_name)):
-        raise FileNotFoundError('Error: File does not exist')
-    words_dict = wordData.readWordFile(file_name)
-    letter_counts = letterFreqDict(words_dict)
-    order = ''
-    for letter in letter_counts.keys():
-        order += letter
-    print(f'The order of the letter frequency is "{order}"')
-    alphabet_freq = sorted(letter_counts.items(), key=lambda x: x[0])
-    values_lst = []
-    for item in alphabet_freq:
-        values_lst.append(item[1])
-    plt.bar(list(letters), values_lst, color='skyblue')
-    plt.show()
+    try:
+        file_name = input('Enter a file name\n-> ')
+        if not os.path.isfile(os.path.join('data', file_name)):
+            raise FileNotFoundError('Error: File does not exist')
+        words_dict = wordData.readWordFile(file_name)
+        letter_counts = letterFreqDict(words_dict)
+        order = ''
+        for letter in letter_counts.keys():
+            order += letter
+        print(f'The order of the letter frequency is "{order}"')
+        alphabet_freq = sorted(letter_counts.items(), key=lambda x: x[0])
+        values_lst = []
+        for item in alphabet_freq:
+            values_lst.append(item[1])
+        plt.bar(list(letters), values_lst, color='skyblue')
+        plt.show()
+    except Exception as e:
+        print(str(e))
 
 
 if __name__ == '__main__':
