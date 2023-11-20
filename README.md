@@ -55,12 +55,17 @@
 > ### [trending.py](trending.py)
 > #### trending desc
 > #### trending has 3 functions inside of it:
-> - Func()
->   - Text
-> - Func()
->   - Text
+> - trending(words, startYr, endYr)
+>   - *The func takes in a dictionary of words with their years and word count, a start year, and an end year. Then it 
+>   if the word count for both the start year and end year is greater than 1000, the function will make a tuple of the 
+>   word and its trend value (end year word count/start year word count) and append it to the result list. Finally, the 
+>   func will sort the list in reverse order and return the list.*
+> - printResults(trend_lst, start_year, end_year)
+>   - *The func takes in the results from trending() and prints the results line by line depending on the length of the 
+>   list.*
 > - main()
->   - When run on its own trending will ...
+>   - When run on its own trending will ask the user to input a file name, a start year, and an end year. Then it will 
+>   print out a list of the top 10 trending words and the bottom 10 trending words.
 
 > ### [wordSimilarity.py](wordSimilarity.py)
 > #### wordSimilarity desc
@@ -82,7 +87,7 @@
 - [x] Write wordData.py
 - [x] Write letterFreq.py
 - [x] Write printedWords.py
-- [ ] Write trending.py
+- [x] Write trending.py
 - [ ] Write wordSimilarity.py
 - [ ] All tests work
 - [ ] All inputs are backed up with fail-safes
