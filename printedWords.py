@@ -11,6 +11,8 @@ def printedWords(words: dict) -> list:
     :param words:
     :return:
     """
+    if type(words) != dict:
+        raise TypeError('Error: letterFreq() expected type dict for words parameter')
     word_count_by_year = {}
     for word, year_info in words.items():
         for year, count in year_info.items():

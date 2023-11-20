@@ -62,7 +62,7 @@ def letterFreq(words: dict) -> str:
     """
     result = ''
     if type(words) != dict:
-        return letters
+        raise TypeError('Error: letterFreq() expected type dict for words parameter')
     for letter in letterFreqDict(words).keys():
         result += letter
     return result
