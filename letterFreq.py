@@ -2,7 +2,6 @@ import os.path
 import matplotlib.pyplot as plt
 import wordData
 
-
 letters = 'abcdefghijklmnopqrstuvwxyz'
 
 
@@ -61,7 +60,7 @@ def letterFreq(words: dict) -> str:
     :return:
     """
     result = ''
-    if type(words) != dict:
+    if type(words) is not dict:
         raise TypeError('Error: letterFreq() expected type dict for words parameter')
     for letter in letterFreqDict(words).keys():
         result += letter
