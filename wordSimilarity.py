@@ -45,6 +45,12 @@ def topSimilar(words: dict, search_word: str) -> list:
 
 
 def printResults(lst):
+    """
+    The func takes the results from the program and prints the
+    list of similar words.
+
+    :param lst:
+    """
     print(f'\nThe top {len(lst)} results are:')
     for word in lst:
         print(f'{word}')
