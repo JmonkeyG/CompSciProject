@@ -69,13 +69,18 @@
 
 > ### [wordSimilarity.py](wordSimilarity.py)
 > #### wordSimilarity desc
-> #### wordSimilarity has 3 functions inside of it:
-> - Func()
->   - Text
-> - Func()
->   - Text
+> #### wordSimilarity has 4 functions inside of it:
+> - getYearRange(words)
+>   - *The func takes in a dictionary and returns the lowest and highest year in all the data.*
+> - topSimilar()
+>   - *The func takes a dictionary of words and their data and a search word. Then it makes an array of vectors for each
+>   word and a vector for the search word. Then it compares all the vectors using cosine similarity to determine the 
+>   most similar. Finally, the func returns a list of the top 5 most similar words.*
+> - printResults()
+>   - *The func takes the results from the program and prints the list of similar words.*
 > - main()
->   - When run on its own wordSimilarity will ...
+>   - *When run on its own wordSimilarity will ask the user to input a file name and a word to check the similarities 
+>   to. Then it will print out the closest 5 words in similarity.*
 
 <br>
 
@@ -88,6 +93,8 @@
 - [x] Write letterFreq.py
 - [x] Write printedWords.py
 - [x] Write trending.py
-- [ ] Write wordSimilarity.py
-- [ ] All tests work
+- [x] Write wordSimilarity.py
+- [x] All tests work
 - [ ] All inputs are backed up with fail-safes
+- [ ] All code is optimized
+- [ ] All code is cleaned up and looks nice
